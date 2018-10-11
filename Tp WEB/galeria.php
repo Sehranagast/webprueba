@@ -1,0 +1,161 @@
+<!doctype html>
+
+
+
+
+<html lang="en">
+  <head>
+    <title>Title</title>
+ 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="index.html">
+  <body>
+  <header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="index.php?seccion=index">WarcraftMovie</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+        </button>
+        <nav class="navbar bg-primary navbar-expand-lg navbar-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+       
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="navbar-nav mr-auto">
+             
+                <li class="nav-item <?= !empty($_GET["seccion"]) && $_GET["seccion"] == "index" ? "active" : ""; ?>">
+                    <a class="nav-link" href="index.php?seccion=index">Index</a>
+                </li>
+               
+                <li class="nav-item <?= !empty($_GET["seccion"]) && $_GET["seccion"] == "registro" ? "active" : ""; ?>">
+                    <a class="nav-link"href="registro.php?seccion=registro">Registro</a>
+                </li>
+
+            </ul>
+        </div>
+
+    </nav>
+    </header>
+    
+
+  <?php
+
+  $galeria = [];
+
+    $galeria[] = [
+        "nombre" => "Lothar y Garona",
+        "descripcion" => "En esta escena vemos cuando empieza a formarse la alianza entre Anduin Lothar y Garona",
+        "ruta" => "img/lothargarona.jpg",
+        "autor" => "Blizzard"
+     
+
+    ];
+
+    $galeria[] = [
+        "nombre" => "Lothar",
+        "descripcion" => "Anduin Lothar apunto de enfrentarse con Blackhand",
+        "ruta" => "img/lothar.jpg",
+        "autor" => "Blizzard"
+
+    ];
+    $galeria[] = [
+        "nombre" => "Blackhand",
+        "descripcion" => "Blackhand, Lider del clan Rocanegra",
+        "ruta" => "img/blackhand.jpg",
+        "autor" => "Blizzard"
+
+    ];
+    $galeria[] = [
+        "nombre" => "Doomhammer",
+        "descripcion" => "Orgrim Doomhammer, Lider de guerra de la Horda de entonces",
+        "ruta" => "img/doomhammer.jpg",
+        "autor" => "Blizzard"
+
+    ];
+    $galeria[] = [
+        "nombre" => "Draenor",
+        "descripcion" => "Draenor, hogar de los orcos antes de cruzar el portal hacia Azeroth",
+        "ruta" => "img/draenor.jpg",
+        "autor" => "Blizzard"
+
+    ];
+    $galeria[] = [
+        "nombre" => "Durotan",
+        "descripcion" => "Durotan, Lider del clan de los Frostwolf",
+        "ruta" => "img/durotan.jpg",
+        "autor" => "Blizzard"
+
+    ];
+    $galeria[] = [
+        "nombre" => "Durotan y Doomhammer",
+        "descripcion" => "Los dos lideres orcos recien llegados a Azeroth, observando una ciudad Alianza",
+        "ruta" => "img/durotandoomhammer.jpg",
+        "autor" => "Blizzard"
+
+    ];
+    $galeria[] = [
+        "nombre" => "Garona",
+        "descripcion" => "Garona, la semiorco, emisaria de la Horda en su primera invasion",
+        "ruta" => "img/Garona.jpg",
+        "autor" => "Blizzard"
+
+    ];
+    $galeria[] = [
+        "nombre" => "Lothar2",
+        "descripcion" => "Anduin Lothar, supremo comandante de la Alianza",
+        "ruta" => "img/lothar2.jpg",
+        "autor" => "Blizzard"
+
+    ];
+    $galeria[] = [
+        "nombre" => "Medivh",
+        "descripcion" => "Medivh, el primer guardian, bajo la influencia demoniaca abrio el portal entre los dos mundos",
+        "ruta" => "img/medivh.jpg",
+        "autor" => "Blizzard"
+
+    ];
+  
+
+?>
+
+<div class="container">
+        <div class="row">
+           <div class="col-12">
+       <h1 class="text-center">Galeria</h1>
+       </div>
+  <div class="row justify-content-center">
+  <?php
+     foreach($galeria as $foto):
+        ?>
+     <div class="col-4">
+          <img src="<?php echo $foto["ruta"]; ?>" alt="<?= $foto["nombre"] ?>" class="img-fluid">
+          <h2 class="h4"><?= $foto["nombre"] ?></h2>     
+          <p><?= $foto["descripcion"] ?></p>
+                    <small class="text-success"><?= $foto["autor"] ?></small>
+                </div>
+            <?php
+                endforeach;
+
+            ?>
+
+            </div>        
+        </div>
+        <?php
+   ini_set("display_errors", 1);
+   error_reporting(E_ALL);
+
+   ?>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
+  </body>
+</html>
