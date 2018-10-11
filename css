@@ -1,0 +1,43 @@
+body{
+    background: url(img/prot.jpg);
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: black;
+    background-attachment: fixed;
+}
+h1{
+    margin-bottom: 20px;
+    font-size: 50px;
+    color: yellow;
+}
+h2{
+    font-size: 40px;
+    color: yellow;
+}
+
+h3{
+    font-size: 18px;
+    color: white;
+}
+.h4{
+    font-size: 22px;
+    color:white;
+}
+p{
+    font-size: 20px;
+    color: white;
+}
+nav.navbar-dark{
+    border-bottom: 5px solid #ebeae9 !important;
+    background-color: rgb(0, 0, 0) !important;
+}
+
+label{
+    font-size: 30px;
+    color: white;
+}
+input{
+    font-size: 15px;
+}
